@@ -1,5 +1,3 @@
-<img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/f9ec1c95-b34c-4d65-9ed3-de5895076aec" />Лабораторная работа №1
-=
 lab1/model.py
 ---
 Атрибуты класса и закрытые атрибуты экземпляра
