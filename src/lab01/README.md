@@ -30,7 +30,7 @@ lab1/model.py
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
 <img width="797" height="556" alt="image" src="https://github.com/user-attachments/assets/19163b49-0e03-4db9-8c86-2035162ec374" />
----
+
 Бизнес-методы
 >chek_to_next_curse
 >проверяет, может ли студент перейти на следующий курс на основе среднего балла.
@@ -250,4 +250,5 @@ except ValueError as e:
     print(f"студент {student3.surname} оказался не активный ")
 ```
 вывод 
+---
 <img width="832" height="781" alt="image" src="https://github.com/user-attachments/assets/345a01fb-1a6b-4e3f-8cad-6e065ef4c109" />
