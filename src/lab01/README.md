@@ -11,7 +11,8 @@ lab1/model.py
 >__repr__ определяет "официальное" строковое представление объекта
 >__eq__ Это магический метод для перегрузки оператора равенства ==.\n Определяет логику сравнения двух объектов. Должен возвращать True или False.
 <img width="1068" height="215" alt="image" src="https://github.com/user-attachments/assets/d91fac57-4d75-45ec-8ac8-cc2fbc0a49d3" />
----
+
+
 Методы валидации
 >_validate_name
 >>Проверка типа: должно быть строкой (isinstance(name, str))
