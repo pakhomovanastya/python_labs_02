@@ -1,7 +1,51 @@
-Лабораторная работа №1
+<img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/f9ec1c95-b34c-4d65-9ed3-de5895076aec" />Лабораторная работа №1
 =
 lab1/model.py
 ---
+Атрибуты класса и закрытые атрибуты экземпляра
+<img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/19eac13b-12a3-4757-b9b6-f97da40e7a38" />
+
+Декоратор @property и метод-сеттер (setter)
+<img width="667" height="821" alt="image" src="https://github.com/user-attachments/assets/8ec0d3cc-93c1-4a5d-964d-0033a0adbbca" />
+
+Магические методы
+>__str__ определяет строковое представление объекта для пользователей
+>__repr__ определяет "официальное" строковое представление объекта
+>__eq__ Это магический метод для перегрузки оператора равенства ==.\n Определяет логику сравнения двух объектов. Должен возвращать True или False.
+<img width="1068" height="215" alt="image" src="https://github.com/user-attachments/assets/d91fac57-4d75-45ec-8ac8-cc2fbc0a49d3" />
+
+Методы валидации
+>_validate_name
+>>Проверка типа: должно быть строкой (isinstance(name, str))
+>>Проверка на пустую строку: длина не может быть 0
+>
+>_validate_gpa
+>>Проверка типа: должно быть float или int
+>>Проверка диапазона: от min_gpa до max_gpa (атрибуты класса)
+>
+>_validate_age
+>>Проверка типа: должно быть int
+>>Проверка диапазона: строго больше min_age и строго меньше max_age
+>
+>_validate_curse
+>>Проверка типа: должно быть int
+>>Проверка диапазона: от min_curse до max_curse
+<img width="797" height="556" alt="image" src="https://github.com/user-attachments/assets/19163b49-0e03-4db9-8c86-2035162ec374" />
+
+Бизнес-методы
+>chek_to_next_curse
+>проверяет, может ли студент перейти на следующий курс на основе среднего балла.
+>>Если студент неактивен — исключение (хотя сообщение об ошибке не соответствует условию)
+>>Если средний балл >= минимального для перехода (атрибут класса) — возвращает True, иначе — возвращает False
+>
+>to_next_course
+>выполняет перевод студента на следующий курс (изменяет состояние объекта).
+>>Если студент неактивен — исключение
+>>Если студент уже на последнем курсе (max_curse) — исключение
+>>Иначе — увеличивает номер курса на 1
+<img width="712" height="432" alt="image" src="https://github.com/user-attachments/assets/65232265-10be-428a-ac17-87102a6df0db" />
+
+
 ```python
 class Student:
     min_gpa = 1
