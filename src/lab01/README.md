@@ -2,16 +2,16 @@ lab1/model.py
 ---
 Атрибуты класса и закрытые атрибуты экземпляра
 <img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/19eac13b-12a3-4757-b9b6-f97da40e7a38" />
-
+---
 Декоратор @property и метод-сеттер (setter)
 <img width="667" height="821" alt="image" src="https://github.com/user-attachments/assets/8ec0d3cc-93c1-4a5d-964d-0033a0adbbca" />
-
+---
 Магические методы
 >__str__ определяет строковое представление объекта для пользователей
 >__repr__ определяет "официальное" строковое представление объекта
 >__eq__ Это магический метод для перегрузки оператора равенства ==.\n Определяет логику сравнения двух объектов. Должен возвращать True или False.
 <img width="1068" height="215" alt="image" src="https://github.com/user-attachments/assets/d91fac57-4d75-45ec-8ac8-cc2fbc0a49d3" />
-
+---
 Методы валидации
 >_validate_name
 >>Проверка типа: должно быть строкой (isinstance(name, str))
@@ -29,7 +29,7 @@ lab1/model.py
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
 <img width="797" height="556" alt="image" src="https://github.com/user-attachments/assets/19163b49-0e03-4db9-8c86-2035162ec374" />
-
+---
 Бизнес-методы
 >chek_to_next_curse
 >проверяет, может ли студент перейти на следующий курс на основе среднего балла.
