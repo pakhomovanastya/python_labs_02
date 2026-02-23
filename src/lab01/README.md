@@ -206,3 +206,5 @@ try:
 except ValueError as e:
     print(f"студент {student3.surname} оказался не активный ")
 ```
+вывод 
+<img width="832" height="781" alt="image" src="https://github.com/user-attachments/assets/345a01fb-1a6b-4e3f-8cad-6e065ef4c109" />
