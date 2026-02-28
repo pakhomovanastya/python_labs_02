@@ -3,7 +3,7 @@ from model import Student
 student1 = Student("Иванов", "Иван", 19, 2, 2.7)
 student2 = Student("Петров", "Петр", 20, 3, 3.2)
 student3 = Student("Сидорова", "Анна", 18, 1, 4.8)
-
+student4 = Student("Иванов", "Иван", 19, 2, 2.7)
 
 print("\n> три экземпляра класса Student с разными параметрами")
 print(student1) #вызывает __str__
@@ -14,6 +14,11 @@ print(repr(student3)) #вызывает __repr__
 
 print("\n> Сравнение объектов")
 if student1 == student2: #вызывает __eq__
+    print(f"один и тот же студент")
+else:
+    print(f"разные студенты")
+
+if student1 == student4: #вызывает __eq__
     print(f"один и тот же студент")
 else:
     print(f"разные студенты")

@@ -62,8 +62,6 @@ class Student:
     @property
     def is_active(self):
         return self.__is_active
-    def not_active(self):
-        self.__is_active = False
 
 
         
@@ -129,3 +127,6 @@ class Student:
             raise ValueError("Студент уже на последнем курсе")
         self.__curse += 1
         return f"cтудент переведен на {self.__curse} курс"
+    
+    def not_active(self):
+        self.__is_active = False
