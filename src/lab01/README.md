@@ -1,7 +1,7 @@
 lab1/model.py
 ---
 Атрибуты класса и закрытые атрибуты экземпляра
-<img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/19eac13b-12a3-4757-b9b6-f97da40e7a38" />
+<img width="932" height="612" alt="Атрибуты класса" src="https://github.com/user-attachments/assets/36f1933d-3d94-4b5f-bf39-62ea340b1d66" />
 ---
 Декоратор @property и метод-сеттер (setter)
 <img width="667" height="821" alt="image" src="https://github.com/user-attachments/assets/8ec0d3cc-93c1-4a5d-964d-0033a0adbbca" />
@@ -10,8 +10,7 @@ lab1/model.py
 >__str__ определяет строковое представление объекта для пользователей
 >__repr__ определяет "официальное" строковое представление объекта
 >__eq__ Это магический метод для перегрузки оператора равенства ==.\n Определяет логику сравнения двух объектов. Должен возвращать True или False.
-<img width="1068" height="215" alt="image" src="https://github.com/user-attachments/assets/d91fac57-4d75-45ec-8ac8-cc2fbc0a49d3" />
-
+<img width="1417" height="285" alt="Магические методы" src="https://github.com/user-attachments/assets/97cb7546-5607-4c9a-82ab-b3bde86b0c2b" />
 
 Методы валидации
 >validate_name
@@ -29,7 +28,7 @@ lab1/model.py
 >validate_curse
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
-<img width="797" height="556" alt="image" src="https://github.com/user-attachments/assets/19163b49-0e03-4db9-8c86-2035162ec374" />
+<img width="996" height="750" alt="Методы валидации" src="https://github.com/user-attachments/assets/acf76e19-dde2-49e7-9a38-7e884072b935" />
 
 Бизнес-методы
 >chek_to_next_curse
@@ -42,7 +41,7 @@ lab1/model.py
 >>Если студент неактивен — исключение
 >>Если студент уже на последнем курсе (max_curse) — исключение
 >>Иначе — увеличивает номер курса на 1
-<img width="712" height="432" alt="image" src="https://github.com/user-attachments/assets/65232265-10be-428a-ac17-87102a6df0db" />
+<img width="945" height="671" alt="бизнесс-методы" src="https://github.com/user-attachments/assets/c3a88b3c-fbbd-4834-942b-477ceebe722e" />
 
 model.py
 ---
@@ -270,4 +269,4 @@ except ValueError as e:
 ```
 вывод 
 ---
-GitHub/python_labs_02/images/lab01/валидация demo.py .png
+<img width="861" height="858" alt="валидация demo py " src="https://github.com/user-attachments/assets/945becb1-256a-4bec-b5c0-c0fa171d7873" />
