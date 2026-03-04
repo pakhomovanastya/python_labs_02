@@ -1,5 +1,7 @@
 from random import randint
 from model import Student
+
+
 student1 = Student("Иванов", "Иван", 19, 2, 2.7)
 student2 = Student("Петров", "Петр", 20, 3, 3.2)
 student3 = Student("Сидорова", "Анна", 18, 1, 4.8)
@@ -44,19 +46,23 @@ print(f"максимальный возраст {student1.max_age}") #через
 
 
 print("\n> первый сценарий работы")
-for i in range(3):
-    if student2.chek_to_next_curse():
-        student2.to_next_course()
-        student2.gpa=randint(3, 5)
-try:
-    if student2.chek_to_next_curse():
-        student2.to_next_course()
-except ValueError as e:
-    print(f"{e}")
+for i in range(4):
+    try:
+        if student2.chek_to_next_curse():
+            student2.to_next_course()
+            student2.gpa = randint(3, 5)
+            print(f"студент переведён на {student2.curse} курс, новый балл: {student2.gpa}")
+        else:
+            print(f"студент не может быть переведён (балл: {student2.gpa})")
+            break
+    except ValueError as e:
+        print(f"Ошибка {e}")
+
     
 print("\n> второй сценарий работы")
 if student1.chek_to_next_curse():
     student1.to_next_course()
+    print(f"студент {student1.surname} переведён на курс {student1.curse}")
 else:
     print(f"студент {student1.surname} не прошёл прверку по среднему баллу {student1.gpa}")
 
@@ -66,5 +72,7 @@ student3.not_active()
 try:
     if student3.chek_to_next_curse():
         student3.to_next_course()
+    else:
+        print(f"студент {student3.surname} не может быть переведён (причина: неактивен)")
 except ValueError as e:
-    print(f"студент {student3.surname} оказался не активный ")
+    print(f"Ошибка при попытке перевода: {e}")

@@ -14,19 +14,19 @@ lab1/model.py
 
 
 Методы валидации
->_validate_name
+>validate_name
 >>Проверка типа: должно быть строкой (isinstance(name, str))
 >>Проверка на пустую строку: длина не может быть 0
 >
->_validate_gpa
+>validate_gpa
 >>Проверка типа: должно быть float или int
 >>Проверка диапазона: от min_gpa до max_gpa (атрибуты класса)
 >
->_validate_age
+>validate_age
 >>Проверка типа: должно быть int
 >>Проверка диапазона: строго больше min_age и строго меньше max_age
 >
->_validate_curse
+>validate_curse
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
 <img width="797" height="556" alt="image" src="https://github.com/user-attachments/assets/19163b49-0e03-4db9-8c86-2035162ec374" />
@@ -44,9 +44,13 @@ lab1/model.py
 >>Иначе — увеличивает номер курса на 1
 <img width="712" height="432" alt="image" src="https://github.com/user-attachments/assets/65232265-10be-428a-ac17-87102a6df0db" />
 
-
+model.py
+---
 ```python
+from validate import validate_name, validate_gpa, validate_age, validate_curse
+
 class Student:
+    """представляет студента с его персональными данными и успеваемостью"""
     min_gpa = 1
     max_gpa = 5
 
@@ -77,86 +81,52 @@ class Student:
         return self.__surname
     @surname.setter
     def surname(self, value):
-        self.__surname = self._validate_name(value, "Фамилия")
+        self.__surname = validate_name(value, "Фамилия")
 
     @property
     def name(self):
         return self.__name
     @name.setter
     def name(self, value):
-        self.__name = self._validate_name(value, "Имя")
+        self.__name = validate_name(value, "Имя")
 
     @property
     def age(self):
         return self.__age
     @age.setter
     def age(self, value):
-        self.__age = self._validate_age(value)
+        self.__age = validate_age(value, self.min_age, self.max_age)
     
     @property
     def curse(self):
         return self.__curse
     @curse.setter
     def curse(self, value):
-        self.__curse = self._validate_curse(value)
+        self.__curse = validate_curse(value, self.min_curse, self.max_curse)
 
     @property
     def gpa(self):
         return self.__gpa
     @gpa.setter
     def gpa(self, value):
-        self.__gpa = self._validate_gpa(value)
+        self.__gpa = validate_gpa(value, self.min_gpa, self.max_gpa)
 
     @property
     def is_active(self):
         return self.__is_active
-    def not_active(self):
-        self.__is_active = False
 
 
-        
 
     def __str__(self):
         return f"Фамилия Имя {self.__surname} {self.__name}, возраст {self.__age}\n курс: {self.__curse}, ср. балл: {self.__gpa:.2f}."
     def __repr__(self):
-        return f"__age {self.__surname}, __name {self.__name}, __age {self.__age}, __curse {self.__curse},__gpa {self.__gpa}."
+        return f"__surname {self.__surname}, __name {self.__name}, __age {self.__age}, __curse {self.__curse}, __gpa {self.__gpa}."
     def __eq__(self, student2):
         return (self.__surname==student2.__surname and 
                 self.__name==student2.__name and 
                 self.__age==student2.__age and
                 self.__curse == student2.__curse)
         
-
-
-    def _validate_name(self, name, field_name):
-        if not isinstance(name, str):
-            raise TypeError(f"{field_name} должна быть строкой")
-        if len(name) == 0:
-            raise ValueError(f"{field_name} не может быть пустой")
-        return name
-
-    def _validate_gpa(self, gpa):
-        if not (type(gpa) ==float or type(gpa) ==int):
-            raise TypeError("неправильный тип среднего балла")
-        if self.min_gpa <= gpa <= self.max_gpa:
-            return float(gpa)
-        raise ValueError("некорректое значание среднего балла (должно быть от 1 до 5)")
-    
-    def _validate_age(self, age):
-        if not type(age) ==int:
-            raise TypeError("неправильный тип возраста")
-        if self.min_age < age < self.max_age:
-            return int(age)
-        raise ValueError("некорректое значание возраста (должен быть от 16 до 100)")
-    
-    def _validate_curse(self, curse):
-        if type(curse)!=int:
-            raise TypeError("курс должен быть числом")
-        if self.min_curse <= curse <= self.max_curse:
-            return curse
-        raise ValueError("курс должен быть от 1 до 6")
-
-
 
     #бизнесс-методы
     #можно ли перейти на следующий курс по сред баллу
@@ -177,18 +147,56 @@ class Student:
             raise ValueError("Студент уже на последнем курсе")
         self.__curse += 1
         return f"cтудент переведен на {self.__curse} курс"
+    
+    
+    def not_active(self):
+        self.__is_active = False
 ```
 
+vallidate.py
+---
+```python
+def validate_name(name: str, field_name: str) -> str:
+    if not isinstance(name, str):
+        raise TypeError(f"{field_name} должна быть строкой, получен {type(name).__name__}")
+    if len(name) == 0:
+        raise ValueError(f"{field_name} не может быть пустой")
+    return name
+
+def validate_gpa(gpa, min_gpa: float, max_gpa: float) -> float:
+    if not (type(gpa) ==float or type(gpa) ==int):
+        raise TypeError(f"Средний балл должен быть числом, получен {type(gpa).__name__}")
+    if min_gpa <= gpa <= max_gpa:
+        return float(gpa)
+    raise ValueError(f"Средний балл должен быть от {min_gpa} до {max_gpa}")
+
+def validate_age(age: int, min_age: int, max_age: int) -> int:
+    if not type(age) ==int:
+        raise TypeError(f"Возраст должен быть целым числом, получен {type(age).__name__}")
+    if min_age <= age <= max_age:
+        return int(age)
+    raise ValueError(f"Возраст должен быть от {min_age} до {max_age}")
+
+def validate_curse(curse: int, min_curse: int, max_curse: int) -> int:
+    if type(curse)!=int:
+        raise TypeError(f"Курс должен быть целым числом, получен {type(curse).__name__}")
+    if min_curse <= curse <= max_curse:
+        return curse
+    raise ValueError(f"Курс должен быть от {min_curse} до {max_curse}")
+
+```
 
 lab1/demo.py
 ---
 ```python
 from random import randint
 from model import Student
+
+
 student1 = Student("Иванов", "Иван", 19, 2, 2.7)
 student2 = Student("Петров", "Петр", 20, 3, 3.2)
 student3 = Student("Сидорова", "Анна", 18, 1, 4.8)
-
+student4 = Student("Иванов", "Иван", 19, 2, 2.7)
 
 print("\n> три экземпляра класса Student с разными параметрами")
 print(student1) #вызывает __str__
@@ -199,6 +207,11 @@ print(repr(student3)) #вызывает __repr__
 
 print("\n> Сравнение объектов")
 if student1 == student2: #вызывает __eq__
+    print(f"один и тот же студент")
+else:
+    print(f"разные студенты")
+
+if student1 == student4: #вызывает __eq__
     print(f"один и тот же студент")
 else:
     print(f"разные студенты")
@@ -224,19 +237,23 @@ print(f"максимальный возраст {student1.max_age}") #через
 
 
 print("\n> первый сценарий работы")
-for i in range(3):
-    if student2.chek_to_next_curse():
-        student2.to_next_course()
-        student2.gpa=randint(3, 5)
-try:
-    if student2.chek_to_next_curse():
-        student2.to_next_course()
-except ValueError as e:
-    print(f"{e}")
+for i in range(4):
+    try:
+        if student2.chek_to_next_curse():
+            student2.to_next_course()
+            student2.gpa = randint(3, 5)
+            print(f"студент переведён на {student2.curse} курс, новый балл: {student2.gpa}")
+        else:
+            print(f"студент не может быть переведён (балл: {student2.gpa})")
+            break
+    except ValueError as e:
+        print(f"Ошибка {e}")
+
     
 print("\n> второй сценарий работы")
 if student1.chek_to_next_curse():
     student1.to_next_course()
+    print(f"студент {student1.surname} переведён на курс {student1.curse}")
 else:
     print(f"студент {student1.surname} не прошёл прверку по среднему баллу {student1.gpa}")
 
@@ -246,9 +263,11 @@ student3.not_active()
 try:
     if student3.chek_to_next_curse():
         student3.to_next_course()
+    else:
+        print(f"студент {student3.surname} не может быть переведён (причина: неактивен)")
 except ValueError as e:
-    print(f"студент {student3.surname} оказался не активный ")
+    print(f"Ошибка при попытке перевода: {e}")
 ```
 вывод 
 ---
-<img width="832" height="781" alt="image" src="https://github.com/user-attachments/assets/345a01fb-1a6b-4e3f-8cad-6e065ef4c109" />
+GitHub/python_labs_02/images/lab01/валидация demo.py .png
