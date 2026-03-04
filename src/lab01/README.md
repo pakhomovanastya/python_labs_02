@@ -29,7 +29,7 @@ lab1/model.py
 >validate_curse
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
-<img width="996" height="750" alt="Методы валидации" src="https://github.com/user-attachments/assets/0ea4fc6d-1912-4363-b69f-aa459a34dc8c" />
+<img width="806" height="907" alt="Декоратор @property" src="https://github.com/user-attachments/assets/b8eb57ab-cadd-4139-ac8a-60db3a98c9ee" />
 
 Бизнес-методы
 >chek_to_next_curse
