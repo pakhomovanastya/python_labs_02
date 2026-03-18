@@ -44,12 +44,12 @@
 # В файле lab1/model.py
 ---
 ## Атрибуты класса и закрытые атрибуты экземпляра
-https://github.com/pakhomovanastya/python_labs_02/blob/main/images/lab01/%D0%90%D1%82%D1%80%D0%B8%D0%B1%D1%83%D1%82%D1%8B%20%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0.png?raw=true
+
 
 ## Декоратор @property и метод-сеттер (setter)
 >декоратор  @property позволляет обращаться к методам как к атрибутам и обращается к закрытым полям (контролирукемый доступ через свойства)
 >>декоратор имени
-![](/GitHub/python_labs_02/images/lab01/@property%20имя.png)
+![](GitHub/python_labs_02/images/lab01/@property%20имя.png)
 
 >>декоратор фамилии
 ![](/GitHub/python_labs_02/images/lab01/@property%20фамилия.png)
