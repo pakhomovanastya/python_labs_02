@@ -1,9 +1,11 @@
 lab1/model.py
+Лабораторная работа №1: реализован класс Студентов из предметной области "Образование"
 ---
 Атрибуты класса и закрытые атрибуты экземпляра
 <img width="932" height="612" alt="image" src="https://github.com/user-attachments/assets/19eac13b-12a3-4757-b9b6-f97da40e7a38" />
 ---
 Декоратор @property и метод-сеттер (setter)
+>декоратор  @property позволляет обращаться к методам как к атрибутам и обращается к закрытым полям (контролирукемый доступ через свойства)
 <img width="667" height="821" alt="image" src="https://github.com/user-attachments/assets/8ec0d3cc-93c1-4a5d-964d-0033a0adbbca" />
 ---
 Магические методы
@@ -13,7 +15,7 @@ lab1/model.py
 <img width="1068" height="215" alt="image" src="https://github.com/user-attachments/assets/d91fac57-4d75-45ec-8ac8-cc2fbc0a49d3" />
 
 
-Методы валидации
+Методы валидаци
 >validate_name
 >>Проверка типа: должно быть строкой (isinstance(name, str))
 >>Проверка на пустую строку: длина не может быть 0

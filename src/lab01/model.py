@@ -1,4 +1,4 @@
-from validate import validate_name, validate_gpa, validate_age, validate_curse
+from .validate import validate_name, validate_gpa, validate_age, validate_curse
 
 class Student:
     """представляет студента с его персональными данными и успеваемостью"""
