@@ -49,7 +49,7 @@
 ## Декоратор @property и метод-сеттер (setter)
 >декоратор  @property позволляет обращаться к методам как к атрибутам и обращается к закрытым полям (контролирукемый доступ через свойства)
 >>декоратор имени
-![](GitHub/python_labs_02/images/lab01/@property%20имя.png)
+![](images/lab01/@property имя.png)
 
 >>декоратор фамилии
 ![](/GitHub/python_labs_02/images/lab01/@property%20фамилия.png)
