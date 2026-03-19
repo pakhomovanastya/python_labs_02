@@ -60,11 +60,11 @@
 ![](/python_labs_02/images/lab01/@property%20фамилия.png)
 
 >декоратор курса
-![](/python_labs_02/images/lab01/@property%20курс.png)
+![](/images/lab01/@property%20курс.png)
 
 >декоратор возраста
 
-![](/python_labs_02/images/lab01/@property%20возраст.png)
+![](images/lab01/@property%20возраст.png)
 
 >декоратор gpa
 
