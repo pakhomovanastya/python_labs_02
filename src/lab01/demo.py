@@ -1,5 +1,5 @@
 from random import randint
-from .model import Student
+from model import Student
 
 
 student1 = Student("Иванов", "Иван", 19, 2, 2.7)
