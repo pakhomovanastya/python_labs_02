@@ -53,7 +53,7 @@
 >
 >декоратор имени
 
-![](/python_labs_02/images/lab01/@property%20имя.png)
+![](python_labs_02/images/lab01/@property%20имя.png)
 
 >декоратор фамилии
 
