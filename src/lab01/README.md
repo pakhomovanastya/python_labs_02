@@ -53,22 +53,23 @@
 >
 >декоратор имени
 
-![](python_labs_02/images/lab01/@property%20имя.png)
+![](/images/lab01/@property%20имя.png)
 
 >декоратор фамилии
 
-![](/python_labs_02/images/lab01/@property%20фамилия.png)
+![](/images/lab01/@property%20фамилия.png)
 
 >декоратор курса
+
 ![](/images/lab01/@property%20курс.png)
 
 >декоратор возраста
 
-![](images/lab01/@property%20возраст.png)
+![](/images/lab01/@property%20возраст.png)
 
 >декоратор gpa
 
-![](/python_labs_02/images/lab01/@property%20gpa.png)
+![](/images/lab01/@property%20gpa.png)
 
 ## Магические методы
 >__str__ определяет строковое представление объекта для пользователей
@@ -77,7 +78,7 @@
 >
 >__eq__ Это магический метод для перегрузки оператора равенства ==. Определяет логику сравнения двух объектов. Должен возвращать True или False.
 
-![](/python_labs_02/images/lab01/Магические%20методы.png)
+![](/images/lab01/Магические%20методы.png)
 
 ## Бизнес-методы
 >chek_to_next_curse
@@ -86,7 +87,7 @@
 >>
 >>Если средний балл >= минимального для перехода (атрибут класса) — возвращает True, иначе — возвращает False
 
-![](/python_labs_02/images/lab01/би%201.png)
+![](/images/lab01/би%201.png)
 
 >to_next_course
 >выполняет перевод студента на следующий курс (изменяет состояние объекта).
@@ -96,7 +97,7 @@
 >>
 >>Иначе — увеличивает номер курса на 1
 
-![](/python_labs_02/images/lab01/би%202.png)
+![](/images/lab01/би%202.png)
 
 # validate.py
 ---
@@ -106,26 +107,26 @@
 >>
 >>Проверка на пустую строку: длина не может быть 0
 
-![](/python_labs_02/images/lab01/вылидация%20имя%20фамилии.png)
+![](/images/lab01/вылидация%20имя%20фамилии.png)
 
 >validate_gpa
 >>Проверка типа: должно быть float или int
 >>
 >>Проверка диапазона: от min_gpa до max_gpa (атрибуты класса)
 
-![](/python_labs_02/images/lab01/валидация%20gpa.png)
+![](/images/lab01/валидация%20gpa.png)
 
 >validate_age
 >>Проверка типа: должно быть int
 >>Проверка диапазона: строго больше min_age и строго меньше max_age
 
-![](/GitHub/python_labs_02/images/lab01/валидация%20возраста.png)
+![](/images/lab01/валидация%20возраста.png)
 
 >validate_curse
 >>Проверка типа: должно быть int
 >>Проверка диапазона: от min_curse до max_curse
 
-![](/GitHub/python_labs_02/images/lab01/@property%20курс.png)
+![](/images/lab01/@property%20курс.png)
 
 
 # demo.py
@@ -133,24 +134,24 @@
 ## Вывод 
 >демонстрация атрибутов класса
 
-![](/GitHub/python_labs_02/images/lab01/демо%20атрибутов%20класса.png)
+![](/images/lab01/демо%20атрибутов%20класса.png)
 
 >Демонстрация вывода инициализированного объекта
 
-![](/GitHub/python_labs_02/images/lab01/Демонстрация%20вывода%20инициализированного%20объекта.png)
+![](/images/lab01/Демонстрация%20вывода%20инициализированного%20объекта.png)
 
 >обработка ошибок
 
-![](/GitHub/python_labs_02/images/lab01/обработка%20ошибок.png)
+![](/images/lab01/обработка%20ошибок.png)
 
 >бизнес метод 1
 
-![](/GitHub/python_labs_02/images/lab01/демо%20атрибутов%20класса.png)
+![](/images/lab01/демо%20атрибутов%20класса.png)
 
 >бизнес метод 2
 
-![](/GitHub/python_labs_02/images/lab01/демо%20би%202.png)
+![](/images/lab01/демо%20би%202.png)
 
 >общий вывод
 
-![](/python_labs_02/images/lab01/общий%20демо.png)
+![](/images/lab01/общий%20демо.png)
