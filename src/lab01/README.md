@@ -44,30 +44,32 @@
 # В файле lab1/model.py
 ---
 ## Атрибуты класса и закрытые атрибуты экземпляра
+<img width="750" height="288" alt="Атрибуты класса" src="https://github.com/user-attachments/assets/39690e65-13fb-4839-9bb2-ff02f44c7fc9" />
 
+<img width="866" height="321" alt="Закрытые атрибуты экземпляра" src="https://github.com/user-attachments/assets/ca71af89-2a1d-4101-8a9e-fc70769e56a7" />
 
 ## Декоратор @property и метод-сеттер (setter)
 >декоратор  @property позволляет обращаться к методам как к атрибутам и обращается к закрытым полям (контролирукемый доступ через свойства)
->>декоратор имени
-![](images/lab01/@property имя.png)
+>декоратор имени
+
 
 >>декоратор фамилии
-![](/GitHub/python_labs_02/images/lab01/@property%20фамилия.png)
+![](python_labs_02/images/lab01/@property%20фамилия.png)
 
 >>декоратор курса
-![](/GitHub/python_labs_02/images/lab01/@property%20курс.png)
+![](/python_labs_02/images/lab01/@property%20курс.png)
 
 >>декоратор возраста
-![](/GitHub/python_labs_02/images/lab01/@property%20возраст.png)
+![](/images/lab01/@property%20возраст.png)
 
 >>декоратор gpa
-![](/GitHub/python_labs_02/images/lab01/@property%20gpa.png)
+![](images/lab01/@property%20gpa.png)
 
 ## Магические методы
 >__str__ определяет строковое представление объекта для пользователей
 >__repr__ определяет "официальное" строковое представление объекта
 >__eq__ Это магический метод для перегрузки оператора равенства ==. Определяет логику сравнения двух объектов. Должен возвращать True или False.
-![](/GitHub/python_labs_02/images/lab01/Магические%20методы.png)
+![](GitHub/python_labs_02/images/lab01/Магические%20методы.png)
 
 ## Бизнес-методы
 >chek_to_next_curse
