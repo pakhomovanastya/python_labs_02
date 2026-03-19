@@ -91,13 +91,24 @@ class Student:
     
 
     def to_next_course(self):
-        """перевод на следующий курс (изменение состояния)"""
+        """БИЗНЕС-МЕТОД 1: перевод на следующий курс (изменение состояния)"""
         if not self.__is_active:
             raise ValueError("нельзя перевести отчисленного студента")
         if self.__curse >= self.max_curse:
             raise ValueError("Студент уже на последнем курсе")
         self.__curse += 1
         return f"cтудент переведен на {self.__curse} курс"
+    
+    def to_collect_money(self):
+        """БИЗНЕС-МЕТОД 2: расчёт стипендии"""
+        if not self.__is_active:
+            return 0
+        if self.__gpa >= 4.5:
+            return 5000
+        elif self.__gpa >= 3.5:
+            return 3000
+        else:
+            return 0
     
     
     def not_active(self):

@@ -76,3 +76,7 @@ try:
         print(f"студент {student3.surname} не может быть переведён (причина: неактивен)")
 except ValueError as e:
     print(f"Ошибка при попытке перевода: {e}")
+
+print('\n> четвёртый сценарий работы')
+print(f"Стипендия студента {student2.surname}: {student2.to_collect_money()} руб.")
+print(f"Стипендия студента {student3.surname}: {student3.to_collect_money()} руб.")
