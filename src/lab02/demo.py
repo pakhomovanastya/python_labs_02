@@ -1,5 +1,5 @@
 from .collection import StudentCollection
-from lab01.model import Student
+from ..lib.student import Student
 
 student1 = Student("Иванов", "Иван", 18, 2, 4.2)
 student2 = Student("Прудникова", "Анна", 17, 1, 3)
@@ -66,3 +66,15 @@ print("2)сортировка по курсу")
 activ_st.sort(key=lambda st: st.curse)
 for student in activ_st:
     print(f"{student.surname} {student.name}, курс {student.curse}")
+
+#3 сценарий
+print('\n---сценарий три')
+print("1) достаем первого студента")
+st1 = student_collection[0]
+print(st1)
+print("2) делаем его неактивным")
+st1.not_active()
+print(st1.is_active)
+print("3) получаем всех активных студентов")
+activ_students = student_collection.get_active()
+print(activ_students)

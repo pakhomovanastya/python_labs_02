@@ -1,4 +1,4 @@
-from validate import validate_name, validate_gpa, validate_age, validate_curse
+from .validate import validate_name, validate_gpa, validate_age, validate_curse
 
 class Student:
     """представляет студента с его персональными данными и успеваемостью"""
@@ -113,7 +113,3 @@ class Student:
     
     def not_active(self):
         self.__is_active = False
-    
-    def active(self):
-        """Активировать студента"""
-        self.__is_active = True

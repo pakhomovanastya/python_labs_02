@@ -61,6 +61,13 @@ class StudentCollection:
                 new_collection.add(student)
         return new_collection
     
+    def get_by_type(self, cls):
+        new_collection = StudentCollection()
+        for student in self._students:
+            if type(student) == cls:
+                new_collection.add(student)
+        return new_collection
+
     
     def __str__(self):
         """строковое представление коллекции"""
@@ -82,8 +89,4 @@ class StudentCollection:
         return self._students[index]
     
 
-    
-
-
-    
     
