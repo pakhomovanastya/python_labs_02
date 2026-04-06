@@ -13,13 +13,13 @@ print(student3)
 print("---проверки на поступление")
 try:
     if student1.cheak_gpa_certificate():
-        print(f"{student1.surname} зачислин на Бакалавриат")
+        print(f"{student1.surname} зачислен на Бакалавриат")
 except ValueError as e:
     print(e)
 
 try:
     if student2.chek_gpa_bachelor():
-        print(f"{student2.surname} зачислин на Магистратутру")
+        print(f"{student2.surname} зачислен на Магистратутру")
 except ValueError as e:
     print(e)
 

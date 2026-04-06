@@ -25,7 +25,7 @@ class BachelorStudent(Student):
             return 0
     
     def __str__(self):
-        return f"Бакалавр: {super().__str__()}, {self.__gpa_certificate}, {self.__curse_start}"
+        return f"Бакалавр: {super().__str__()}\nбалл аттестата: {self.__gpa_certificate}, начальный курс: {self.__curse_start}"
 
 class MasterStudent(Student):
     def __init__(self, surname: str, name: str, age: int, curse: int, 
@@ -51,7 +51,7 @@ class MasterStudent(Student):
             return 0
     
     def __str__(self):
-        return f"Магистр: {super().__str__()}, {self.__finished_universiti}, {self.__gpa_bachelor}"
+        return (f"Магистр: {super().__str__()}\nвуз: {self.__finished_universiti}, GPA бакалавра: {self.__gpa_bachelor}")
 
 
 
@@ -80,6 +80,5 @@ class PhDStudent(Student):
             return 0
 
     def __str__(self):
-        return f"Аспирант: {super().__str__()}, {self.__research_fild}, {self.__count_publikations}"
-    
+        return (f"Аспирант: {super().__str__()}\nобласть исследований: {self.__research_fild}, публикации: {self.__count_publikations}")
     
