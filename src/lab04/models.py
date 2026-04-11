@@ -284,6 +284,13 @@ class StudentCollection:
                 result_course.append(c)
         return result_course
     
+    def get_student_dissertation(self):
+        new_collection = StudentCollection()
+        for student in self._students:
+            if isinstance(student, DefendableDissertation):
+                new_collection.add(student)
+        return new_collection
+    
 
     def get_active(self):
         """возвращяем новую коллекцию активных студентов"""

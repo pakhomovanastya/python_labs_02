@@ -34,6 +34,22 @@ class StudentCollection:
     def sort(self, key):
         """сортировка по параметру (по ключу)"""
         self._students.sort(key=key)
+
+    def sort_by_name(self):
+        """сортировка по имении (вызываем верхний метод с лямбдой)"""
+        self.sort(key=lambda st: st.name)
+    
+    def sort_by_surname(self):
+        """сортировка по имении (вызываем верхний метод с лямбдой)"""
+        self.sort(key=lambda st: st.surname)
+    
+    def sort_by_curse(self):
+        """сортировка по курсу (вызываем верхний метод с лямбдой)"""
+        self.sort(key=lambda st: st.curse)
+    
+    def sort_by_gpa(self):
+        """сортировка по среднему баллу (вызываем верхний метод с лямбдой)"""
+        self.sort(key=lambda st: st.gpa)
     
 
     def find_by_surname(self, surname):

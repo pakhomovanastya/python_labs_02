@@ -72,17 +72,17 @@ for student in active_students:
 #2 сценарий
 print("\n---Сценарий 2: сортировка коллекции")
 print("1) Сортировка по фамилии (алфавитный порядок):")
-active_students.sort(key=lambda st: st.surname)
+active_students.sort_by_surname()
 for student in active_students:
     print(f"   {student.surname} {student.name}, курс {student.curse}")
 
 print("\n2) Сортировка по курсу (от 1 до 6):")
-active_students.sort(key=lambda st: st.curse)
+active_students.sort_by_curse()
 for student in active_students:
     print(f"   {student.surname} {student.name}, курс {student.curse}")
 
 print("\n3) Сортировка по среднему баллу (от высокого к низкому):")
-active_students.sort(key=lambda st: -st.gpa)
+active_students.sort_by_gpa()
 for student in active_students:
     print(f"   {student.surname} {student.name}, курс {student.curse}")
 

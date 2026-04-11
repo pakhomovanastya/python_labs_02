@@ -66,7 +66,7 @@ class PhDStudent(Student):
 
     def chek_count_publikations(self):
         if self.__count_publikations < 2:
-            raise ValueError("Не хвататет колличество публикаций")
+            raise ValueError("Не хвататет колличества публикаций")
         return self.curse
     
     def to_collect_money(self):
