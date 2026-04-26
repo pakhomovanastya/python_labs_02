@@ -85,7 +85,7 @@ class Student(PassableExam, Admissible):
     def chek_to_next_curse(self):
         """проверка возможности перевода на следующий курс по среднему баллу"""
         if not self.__is_active:
-            raise ValueError("не хватате баллов для перехода на следующий курс")
+            raise ValueError("Не хватате баллов для перехода на следующий курс")
         if self.__gpa >= self.min_bal_to_next_curse:
             return True
         return False
@@ -94,7 +94,7 @@ class Student(PassableExam, Admissible):
     def to_next_course(self):
         """БИЗНЕС-МЕТОД 1: перевод на следующий курс (изменение состояния)"""
         if not self.__is_active:
-            raise ValueError("нельзя перевести отчисленного студента")
+            raise ValueError("Нельзя перевести отчисленного студента")
         if self.__curse >= self.max_curse:
             raise ValueError("Студент уже на последнем курсе")
         self.__curse += 1
@@ -146,7 +146,7 @@ class BachelorStudent(Student):
     def admiss_university(self):
         cuerse = self.cheak_gpa_certificate()
         if cuerse == 1:
-            print("сдаём математику и физику")
+            print("сдаём математику, физику")
         else:
             print("сдаём математику")
 
