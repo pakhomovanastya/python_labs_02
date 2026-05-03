@@ -1,7 +1,9 @@
 from lib.student import Student
+
 class StudentCollection:
     """коллекция для хранения и управления объектами Student"""
     def __init__(self):
+        """инициализация пустой коллекции"""
         self._students = []
 
     def _check_type(self, student):
@@ -23,6 +25,7 @@ class StudentCollection:
         self._students.remove(student)
 
     def remove_at(self, index):
+        """удалить студента по индексу и вернуть его"""
         if 0 <= index < len(self._students):
             return self._students.pop(index)
         raise IndexError(f"индекс не попадает в диапазон от 0 до {len(self._students)}")
@@ -31,32 +34,45 @@ class StudentCollection:
         """возвращяет список студентов"""
         return self._students
     
+    #методы сортировки
     def sort_by(self, key):
-        """сортировка по параметру (по ключу)"""
-        self._students.sort(key=key)
+        """универсальная сортировка по ключу
+        key - функция, возвращающая значение для сравнения
+        sort_by(lambda st: st.name)"""
+        resalt = StudentCollection()
+        sort_list = sorted(self._students, key=key)
+        for st in sort_list:
+            resalt.add(st)
+        return resalt
 
     def sort_by_name(self):
         """сортировка по имении (вызываем верхний метод с лямбдой)"""
-        self.sort_by(key=lambda st: st.name)
-    
+        return self.sort_by(key=lambda st: st.name)
+        
     def sort_by_surname(self):
         """сортировка по имении (вызываем верхний метод с лямбдой)"""
-        self.sort_by(key=lambda st: st.surname)
+        return self.sort_by(key=lambda st: st.surname)
     
     def sort_by_curse(self):
         """сортировка по курсу (вызываем верхний метод с лямбдой)"""
-        self.sort_by(key=lambda st: st.curse)
+        return self.sort_by(key=lambda st: st.curse)
     
     def sort_by_gpa(self):
         """сортировка по среднему баллу (вызываем верхний метод с лямбдой)"""
-        self.sort_by(key=lambda st: st.gpa)
+        return self.sort_by(key=lambda st: st.gpa)
     
-
+    #методы фильтрации
     def filter_by(self, key):
-        return list(filter(key, self))
+        """фильтрация коллекции по условию-предикату
+        функция, возвращающая True/False для каждого студента
+        результатом будет новая коллекция с отфильтрованными студентами"""
+        resalt = StudentCollection()
+        list_filter = list(filter(key, self))
+        for st in list_filter:
+            resalt.add(st)
+        return resalt
 
-
-
+    #методы поиска
     def find_by_surname(self, surname):
         """поиск по фамилии"""
         result_surname = []
@@ -73,7 +89,7 @@ class StudentCollection:
                 result_course.append(c)
         return result_course
     
-
+    #методы фильтрации по состоянию
     def get_active(self):
         """возвращяем новую коллекцию активных студентов"""
         new_collection = StudentCollection()
@@ -84,9 +100,20 @@ class StudentCollection:
     
 
     def print_coll(self):
+        """вывести всех студентов коллекции в консоль"""
         for st in self:
             print(st)
-    
+
+    def apply(self, func):
+        """применить функцию ко всем студентам коллекции
+        функция, принимающая студента и возвращающая результат -
+        cписок результатов применения функции"""
+        resalt = list()
+        new_resalt = list(map(func, self._students))
+        for st in new_resalt:
+            resalt.append(st)
+        return resalt
+
     
     def __str__(self):
         """строковое представление коллекции"""

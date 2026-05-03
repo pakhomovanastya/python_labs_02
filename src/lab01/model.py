@@ -1,4 +1,4 @@
-from validate import validate_name, validate_gpa, validate_age, validate_curse
+from .validate import validate_name, validate_gpa, validate_age, validate_curse
 
 class Student:
     """представляет студента с его персональными данными и успеваемостью"""
@@ -13,7 +13,7 @@ class Student:
 
     min_bal_to_next_curse = 3
 
-    def __init__(self, surname: str, name: str, age: int, curse: int, gpa: float):
+    def __init__(self, surname: str, name: str, age: int, curse: int, gpa: float) -> None:
         self.__surname = None
         self.__name = None
         self.__age = None #создаём закрытое поле
@@ -28,38 +28,38 @@ class Student:
         self.__is_active = True # состояние студента (активен/отчислен)
 
     @property
-    def surname(self):
+    def surname(self) -> str:
         return self.__surname
     @surname.setter
-    def surname(self, value):
+    def surname(self, value: str):
         self.__surname = validate_name(value, "Фамилия")
 
     @property
-    def name(self):
+    def name(self) -> str:
         return self.__name
     @name.setter
-    def name(self, value):
+    def name(self, value: str):
         self.__name = validate_name(value, "Имя")
 
     @property
-    def age(self):
+    def age(self) -> int:
         return self.__age
     @age.setter
-    def age(self, value):
+    def age(self, value: int):
         self.__age = validate_age(value, self.min_age, self.max_age)
     
     @property
-    def curse(self):
+    def curse(self) -> int:
         return self.__curse
     @curse.setter
-    def curse(self, value):
+    def curse(self, value: int):
         self.__curse = validate_curse(value, self.min_curse, self.max_curse)
 
     @property
-    def gpa(self):
+    def gpa(self) -> float:
         return self.__gpa
     @gpa.setter
-    def gpa(self, value):
+    def gpa(self, value: float):
         self.__gpa = validate_gpa(value, self.min_gpa, self.max_gpa)
 
     @property
@@ -68,11 +68,11 @@ class Student:
 
 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Фамилия Имя {self.__surname} {self.__name}, возраст {self.__age}\n курс: {self.__curse}, ср. балл: {self.__gpa:.2f}."
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f"__surname {self.__surname}, __name {self.__name}, __age {self.__age}, __curse {self.__curse}, __gpa {self.__gpa}."
-    def __eq__(self, student2):
+    def __eq__(self, student2) -> bool:
         return (self.__surname==student2.__surname and 
                 self.__name==student2.__name and 
                 self.__age==student2.__age and
@@ -81,7 +81,7 @@ class Student:
 
     #бизнесс-методы
     #можно ли перейти на следующий курс по сред баллу
-    def chek_to_next_curse(self):
+    def chek_to_next_curse(self) -> bool:
         """проверка возможности перевода на следующий курс по среднему баллу"""
         if not self.__is_active:
             raise ValueError("не хватате баллов для перехода на следующий курс")
@@ -90,7 +90,7 @@ class Student:
         return False
     
 
-    def to_next_course(self):
+    def to_next_course(self) -> str:
         """БИЗНЕС-МЕТОД 1: перевод на следующий курс (изменение состояния)"""
         if not self.__is_active:
             raise ValueError("нельзя перевести отчисленного студента")
@@ -99,7 +99,7 @@ class Student:
         self.__curse += 1
         return f"cтудент переведен на {self.__curse} курс"
     
-    def to_collect_money(self):
+    def to_collect_money(self) -> int:
         """БИЗНЕС-МЕТОД 2: расчёт стипендии"""
         if not self.__is_active:
             return 0
