@@ -117,3 +117,12 @@ class Student:
     def active(self):
         """Активировать студента"""
         self.__is_active = True
+
+    def display(self) -> str:
+        """метод возвращает строковое представление для Displayable Protocol"""
+        return (f"Студент: {self.surname} {self.name}, {self.age} лет, "
+            f"{self.curse} курс, GPA: {self.gpa}, ")
+    
+    def score(self) -> float:
+        """метод возвращает числовой рейтинг студента (для Scorable Protocol)"""
+        return self.gpa

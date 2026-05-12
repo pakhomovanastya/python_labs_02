@@ -23,6 +23,18 @@ class BachelorStudent(Student):
             return 1000
         else:
             return 0
+        
+    
+    def display(self) -> str:
+        """Переопределяем для бакалавра"""
+        return (f"Бакалавр: {self.surname} {self.name}, {self.age} лет, "
+            f"{self.curse} курс, GPA: {self.gpa}\n"
+            f"балл аттестата: {self.__gpa_certificate}, учится на {self.__curse_start} курсе")
+    
+    def score(self) -> float:
+        """Реализация Scorable Protocol"""
+        return self.gpa
+
     
     def __str__(self):
         return f"Бакалавр: {super().__str__()}\nбалл аттестата: {self.__gpa_certificate}, начальный курс: {self.__curse_start}"
@@ -49,6 +61,18 @@ class MasterStudent(Student):
             return 3000
         else:
             return 0
+        
+
+    def display(self) -> str:
+        """Переопределяем для магистра"""
+        return (f"Магистр: {self.surname} {self.name}, {self.age} лет, "
+            f"{self.curse} курс, GPA: {self.gpa}\n"
+            f"балл аттестата бакалавра: {self.__gpa_bachelor}, окончил {self.__finished_universiti}")
+    
+    def score(self) -> float:
+        """Реализация Scorable Protocol"""
+        return self.gpa
+
     
     def __str__(self):
         return (f"Магистр: {super().__str__()}\nвуз: {self.__finished_universiti}, GPA бакалавра: {self.__gpa_bachelor}")
@@ -78,6 +102,18 @@ class PhDStudent(Student):
             return 5000
         else:
             return 0
+        
+    
+    def display(self) -> str:
+        """Переопределяем для аспиранта"""
+        return (f"Аспирант: {self.surname} {self.name}, {self.age} лет, "
+            f"{self.curse} курс, GPA: {self.gpa}\n"
+            f"область исследования: {self.__research_fild}, кол-во публикаций {self.__count_publikations}")
+    
+    def score(self) -> float:
+        """Реализация Scorable Protocol"""
+        return self.gpa
+
 
     def __str__(self):
         return (f"Аспирант: {super().__str__()}\nобласть исследований: {self.__research_fild}, публикации: {self.__count_publikations}")
