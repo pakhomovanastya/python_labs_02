@@ -1,0 +1,18 @@
+[
+  {
+    "surname": "Иванов",
+    "name": "Иван",
+    "age": 18,
+    "curse": 1,
+    "gpa": 4.0,
+    "is_active": true
+  },
+  {
+    "surname": "Иванов",
+    "name": "Петр",
+    "age": 20,
+    "curse": 2,
+    "gpa": 4.2,
+    "is_active": true
+  }
+]
